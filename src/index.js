@@ -1,7 +1,11 @@
 import { program } from 'commander';
 
+import { validateOptions } from './validateOptions';
+
 function start (options) {
   const { action, shift, input, output } = options;
+
+  validateOptions(options);
 
   console.log(action, shift, input, output);
 }
