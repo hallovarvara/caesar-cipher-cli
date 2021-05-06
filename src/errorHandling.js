@@ -11,6 +11,13 @@ export const handleErrors = (errorsData) => {
   process.exit(1);
 };
 
+export const handlePipelineError = (err) => {
+  if (err) {
+    process.stderr.write(err);
+    process.exit(1);
+  }
+};
+
 export const ERROR_STATUS = {
   shiftIsNotNumber: 'Please, specify a number after --shift',
   wrongAction:
