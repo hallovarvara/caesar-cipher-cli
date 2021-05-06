@@ -1,14 +1,12 @@
 import { handleErrors } from './errorHandling';
-import { isSomeUndefined } from './utils';
+import { isSomeUndefined, isNumber } from './utils';
 
 export const validateOptions = (options) => {
   const { action, shift, input, output } = options;
 
-  const isShiftNumber = typeof shift === 'number' && !isNaN(shift);
-
   const errorsData = [];
 
-  if (!isSomeUndefined(shift) && !isShiftNumber) {
+  if (!isSomeUndefined(shift) && !isNumber(shift)) {
     errorsData.push(['shiftIsNotNumber']);
   }
 

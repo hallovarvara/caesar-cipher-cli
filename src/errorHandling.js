@@ -14,5 +14,5 @@ export const handleErrors = (errorsData) => {
 export const ERROR_STATUS = {
   shiftIsNotNumber: 'Please, specify a number after --shift',
   wrongAction:
-    'Please, specify, what CLI should do: type after --action encode or decode',
+    'Please, specify, what CLI should do: type after --action "encode" or "decode"',
 };

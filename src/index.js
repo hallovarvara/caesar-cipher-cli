@@ -12,7 +12,7 @@ function start(options) {
 
 export const cli = (args) =>
   program
-    .requiredOption('-a, --action <type>', 'action: encode or decode')
+    .requiredOption('-a, --action <encode/decode>', 'action: encode or decode')
     .requiredOption('-s, --shift <number>', 'shift number', Number)
     .option('-i, --input <path>', 'input file path')
     .option('-o, --output <path>', 'output file path')
