@@ -1,21 +1,36 @@
-import { handleErrors } from './errorHandling';
+import { handleError } from './handleError';
 import { isSomeUndefined, isNumber } from './utils';
 
 export const validateOptions = (options) => {
   const { action, shift, input, output } = options;
 
-  const errorsData = [];
+  const errorMessages = [];
+
+  if (isSomeUndefined(shift)) {
+    errorMessages.push(
+      'Please, specify a number after --shift or -s (required).',
+    );
+  }
 
   if (!isSomeUndefined(shift) && !isNumber(shift)) {
-    errorsData.push(['shiftIsNotNumber']);
+    errorMessages.push(
+      `Please, type a number after --shift or -s (you specified "${shift}").`,
+    );
+  }
+
+  if (isSomeUndefined(action)) {
+    errorMessages.push(
+      'Please, specify, encode or decode text after --action or -a (required).',
+    );
   }
 
   if (!isSomeUndefined(action) && action !== 'decode' && action !== 'encode') {
-    console.log(options);
-    errorsData.push(['wrongAction']);
+    errorMessages.push(
+      `Please, type "encode" or "decode" after --action or -a (you specified "${action}").`,
+    );
   }
 
-  if (errorsData.length > 0) {
-    handleErrors(errorsData);
+  if (errorMessages.length > 0) {
+    handleError(errorMessages);
   }
 };

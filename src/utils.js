@@ -4,4 +4,7 @@ export const isSomeUndefined = (...params) =>
     false,
   );
 
-export const isNumber = (value) => typeof value === 'number' && !isNaN(value);
+export const isNumber = (value) => {
+  const valueNumber = +value;
+  return typeof valueNumber === 'number' && !isNaN(valueNumber);
+};
