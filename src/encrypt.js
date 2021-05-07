@@ -26,11 +26,14 @@ const isCharUpperCase = (char) => char === char.toUpperCase();
 
 const isCharLetter = (char) => alphabet.includes(char.toLowerCase());
 
+const correctNegativeIndex = (index, alphabetLength) =>
+  index < 0 ? alphabetLength + index : index;
+
 const encode = (charIndex, shift, alphabetLength) =>
-  (charIndex + shift) % alphabetLength;
+  correctNegativeIndex((charIndex + shift) % alphabetLength, alphabetLength);
 
 const decode = (charIndex, shift, alphabetLength) =>
-  (charIndex - shift) % alphabetLength;
+  correctNegativeIndex((charIndex - shift) % alphabetLength, alphabetLength);
 
 const encryptChar = (shift, handleAction, char, alphabet) => {
   const charIndex = alphabet.indexOf(char.toLowerCase());
