@@ -6,7 +6,7 @@
   "bin": {
     "@hallovarvara/caesar-cipher-cli": "bin/caesar-cipher-cli",
     "caesar-cipher-cli": "bin/caesar-cipher-cli",
-    "ccc": "bin/caesar-cipher-cli"
+    "encrypt": "bin/caesar-cipher-cli"
   },
   "publishConfig": {
     "access": "public"

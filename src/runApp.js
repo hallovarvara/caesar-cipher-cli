@@ -1,5 +1,4 @@
 import { pipeline } from 'stream';
-import path from 'path';
 
 import { validateOptions } from './validateOptions';
 import { handleError } from './handleError';
@@ -13,13 +12,5 @@ export const runApp = (options) => {
 
   validateOptions(options);
 
-  const inputFilePath = path.resolve(__dirname, 'input.txt');
-  const outputFilePath = path.resolve(__dirname, 'output.txt');
-
-  pipeline(
-    read(inputFilePath),
-    encrypt(action, shift),
-    write(outputFilePath),
-    handleError,
-  );
+  pipeline(read(input), encrypt(action, shift), write(output), handleError);
 };

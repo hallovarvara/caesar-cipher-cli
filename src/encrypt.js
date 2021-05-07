@@ -17,7 +17,7 @@ export function encrypt(action, shift) {
 
   return async function* (source) {
     for await (const chunk of source) {
-      yield encryptText(+shift, chunk, handleAction) + EOL + EOL;
+      yield encryptText(+shift, chunk, handleAction) + EOL;
     }
   };
 }

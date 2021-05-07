@@ -14,5 +14,5 @@ Encode and decode a text by Caesar cipher.
 ### Examples
 
 ```bash
-ccc -s 12 -a encode -i 'input.txt' -o 'output.txt'
+encrypt -s -1 -a decode -i 'input.txt' -o 'output.txt'
 ```

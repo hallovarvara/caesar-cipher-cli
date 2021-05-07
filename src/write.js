@@ -1,3 +1,4 @@
+import path from 'path';
 import { createWriteStream } from 'fs';
 
 import { isSomeUndefined } from './utils';
@@ -7,5 +8,7 @@ export const write = (rawTargetFilePath) => {
     return process.stdout;
   }
 
-  return createWriteStream(rawTargetFilePath, { flags: 'a' });
+  return createWriteStream(path.resolve(__dirname, rawTargetFilePath), {
+    flags: 'a',
+  });
 };
