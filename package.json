@@ -1,0 +1,38 @@
+{
+  "name": "@hallovarvara/caesar-cipher-cli",
+  "version": "1.0.0",
+  "description": "CLI for encoding and decoding text by Caesar cipher.",
+  "main": "src/index.js",
+  "bin": {
+    "@hallovarvara/caesar-cipher-cli": "bin/caesar-cipher-cli",
+    "caesar-cipher-cli": "bin/caesar-cipher-cli",
+    "encrypt": "bin/caesar-cipher-cli"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hallovarvara/caesar-cipher-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "cipher",
+    "caesar-cipher"
+  ],
+  "author": "Varya Deviaterikova <hallovarvara@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hallovarvara/caesar-cipher-cli/issues"
+  },
+  "homepage": "https://github.com/hallovarvara/caesar-cipher-cli#readme",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "commander": "^7.2.0",
+    "esm": "^3.2.25",
+    "prettier": "^2.2.1"
+  }
+}
