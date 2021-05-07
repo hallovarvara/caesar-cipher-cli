@@ -24,7 +24,7 @@ export const validateOptions = (options) => {
 
   if (isSomeUndefined(action)) {
     errorMessages.push(
-      'Please, specify, encode or decode text after --action or -a (required).',
+      'Please, type "encode" or "decode" after --action or -a (required).',
     );
   }
 
