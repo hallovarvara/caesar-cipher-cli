@@ -5,17 +5,21 @@ import { validateOptions } from './validateOptions';
 import { handleError } from './handleError';
 
 import { read } from './read';
+import { encrypt } from './encrypt';
 import { write } from './write';
 
-export const startEncryption = (options) => {
+export const runApp = (options) => {
   const { action, shift, input, output } = options;
-
-  console.log(action, shift, input, output);
 
   validateOptions(options);
 
   const inputFilePath = path.resolve(__dirname, 'input.txt');
   const outputFilePath = path.resolve(__dirname, 'output.txt');
 
-  pipeline(read(inputFilePath), write(outputFilePath), handleError);
+  pipeline(
+    read(inputFilePath),
+    encrypt(action, shift),
+    write(outputFilePath),
+    handleError,
+  );
 };

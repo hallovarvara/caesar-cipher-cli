@@ -1,5 +1,5 @@
 import { program } from 'commander';
-import { startEncryption } from './startEncryption';
+import { runApp } from './runApp';
 
 export const cli = (args) =>
   program
@@ -7,5 +7,5 @@ export const cli = (args) =>
     .option('-s, --shift <number>', 'shift number')
     .option('-i, --input <path>', 'input file path')
     .option('-o, --output <path>', 'output file path')
-    .action(() => startEncryption(program.opts()))
+    .action(() => runApp(program.opts()))
     .parse(args);
